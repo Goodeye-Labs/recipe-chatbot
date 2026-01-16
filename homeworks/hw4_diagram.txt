@@ -1,0 +1,35 @@
+
+User Query ──▶ [BM25 Retrieval] ──▶ Recipe ──▶ Response
+                    │
+                    ▼
+              [Evaluate]
+              Recall@k, MRR
+                    │
+                    ▼
+              [Analyze Failures]
+                    │
+                    ▼
+              [Improve System]
+              (query rewrite agent, etc.)
+                    │
+                    └──────▶ Repeat
+
+
+example user query:
+ "What temperature for crispy chicken?"
+
+provided data:
+each query generated from a specific recipe - ground truth
+
+MRR: how many clicks until success
+You always find what you need in the first result -> MRR = 1/1
+If the right answer is around position 2 -> MRR would be 1/2 = 0.5
+
+Recall@k: Proportion of relevant items successfully retrieved in the top K
+65% Recall@5 -> 35% of the time, the right recipe isn't even in the top 5
+40% Recall@1 -> 60% of the time, top 1 or the best match isn't the right recipe
+
+optional - query rewrite agent:
+user query -> LLM -> new query, (hopefully) written in terms more likely to appear in recipes
+
+
