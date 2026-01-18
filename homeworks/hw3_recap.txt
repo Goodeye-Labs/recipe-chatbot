@@ -1,0 +1,42 @@
+HW2 Error Categories ──▶ Pick: Dietary Verification
+                              │
+                              ▼
+                    [50 Labeled Traces]
+                    query, dietary_restrictions,
+                    response_label, reasoning
+                              │
+                              ▼
+                    [Write Judge Prompt]
+                    clear pass/fail criteria
+                              │
+                              ▼
+              ┌───────────────┼───────────────┐
+              ▼               ▼               ▼
+          [Train]        [Validation]      [Test]
+          few-shots      tune config     lock final
+              │               │               │
+              └───────────────┴───────────────┘
+                              │
+                              ▼
+                    [Review Leaderboard]
+                    TPR, TNR, bias-corrected
+                              │
+                              ▼
+                    [Examine Failures]
+                    sample-by-sample analysis
+                              │
+                              ▼
+                    [Improve]
+                    custom variants, parallel judges
+                              │
+                              ▼
+                    [Deploy as Eval Endpoint]
+                    access programmatically
+                              │
+                              ▼
+                         ✅ HW3 Complete
+
+Key Insight: Not replacing humans—scaling judgment.
+             Labeled examples encode what you care about.
+             Judge learns → applies to new data.
+             Mistakes are visible & fixable.
